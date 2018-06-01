@@ -33,7 +33,9 @@ public class UserDO {
     public String getPassword() {
         return password;
     }
-
+    public void setId(Long id){
+        this.id = id;
+    }
     public void setUserId(String userId){
         this.userId = userId;
     }

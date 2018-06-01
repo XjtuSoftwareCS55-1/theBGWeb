@@ -30,4 +30,47 @@ public class UserController {
             return "null";
         }
     }
+
+    @RequestMapping(value="add")
+    @ResponseBody
+    public String add(@RequestParam String userId, String password, String nickname){
+        UserDO userDO = new UserDO();
+        userDO.setUserId(userId);
+        userDO.setPassword(password);
+        userDO.setNickName(nickname);
+        boolean result = userService.insertUser(userDO);
+        if(result) {
+            return userDO.getId()+"/"+userDO.getUserId()+"/" + userDO.getPassword();
+        }else {
+            return "null";
+        }
+    }
+    @RequestMapping(value="update")
+    @ResponseBody
+    public String update(@RequestParam String userId, String password, String nickname){
+        UserDO userDO = new UserDO();
+        userDO.setUserId(userId);
+        userDO.setPassword(password);
+        userDO.setNickName(nickname);
+        boolean result = userService.updateUser(userDO);
+        if(result) {
+            return userDO.getId()+"/"+userDO.getUserId()+"/" + userDO.getPassword();
+        }else {
+            return "null";
+        }
+    }
+
+
+    @RequestMapping(value="delete")
+    @ResponseBody
+    public String delete(@RequestParam String userId){
+        UserDO userDO = new UserDO();
+        userDO.setUserId(userId);
+        boolean result = userService.deleteUser(userDO);
+        if(result) {
+            return userDO.getId()+"/"+userDO.getUserId()+"/" + userDO.getPassword();
+        }else {
+            return "null";
+        }
+    }
 }
