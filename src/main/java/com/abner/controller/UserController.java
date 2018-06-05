@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
-    @Autowired
-    private UserService userService;
+        @Autowired
+        private UserService userService;
 
-    @RequestMapping(value="/index")
-    public String index() {
-        return "user/index";
-    }
+        @RequestMapping(value="/index")
+        public String index() {
+            return "user/index";
+        }
 
 
     @RequestMapping(value="show")

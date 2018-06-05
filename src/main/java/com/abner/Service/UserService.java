@@ -16,7 +16,7 @@ public class UserService {
         try{
             userDO = userRespository.findByUserId(userId);
         }catch (Exception e){
-
+            e.printStackTrace();
         }
         return userDO;
     }
@@ -30,7 +30,7 @@ public class UserService {
             UserDO result1 = userRespository.save(userDO);
 //            System.out.println(result.getId()+"/"+result.getUserId()+"/" + result.getPassword());
         }catch (Exception e) {
-
+            e.printStackTrace();
         }
         return true;
     }
@@ -40,7 +40,7 @@ public class UserService {
 //            userRespository.deleteByUserId(userDO.getUserId());
             userRespository.delete(userRespository.findByUserId(userDO.getUserId()));
         }catch(Exception e) {
-
+            e.printStackTrace();
         }
         return true;
     }
@@ -56,7 +56,7 @@ public class UserService {
             UserDO result1 = userRespository.save(userDO);
 //            System.out.println(result.getId()+"/"+result.getUserId()+"/" + result.getPassword());
         }catch (Exception e) {
-
+            e.printStackTrace();
         }
         return true;
     }
